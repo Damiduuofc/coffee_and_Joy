@@ -1,4 +1,4 @@
- ☕ Coffee Landing Page ☕ 
+ ☕ Coffee & Joy ☕ 
 
 <img src="public/bg.png" alt="Banner Image" />
 
