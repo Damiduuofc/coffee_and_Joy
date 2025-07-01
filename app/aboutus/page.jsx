@@ -9,7 +9,7 @@ const data = [
     {
         imgSrc: "/assets/about/photo-2.jpg",
         title: "Our Promise",
-        description: "At Zenbrew, we promise the finest coffee with a positive impact. We source beans from sustainable farms, respecting people and the planet. Our meticulous roasting process ensures a rich, satisfying experience in every cup. We are committed to quality, sustainability, and community.\n\nOur promise extends beyond just delivering exceptional coffee. We believe in building lasting relationships with the farmers who cultivate our beans, ensuring they receive fair wages and work in safe conditions. This ethical approach helps create a sustainable livelihood for those who are at the heart of our coffee production.\n\nQuality is paramount at Zenbrew. Our expert roasters carefully monitor each batch, bringing out the unique flavors and aromas of our premium beans. From the moment the beans are harvested to the final brew, every step is handled with precision and care.\n\nSustainability is woven into the fabric of everything we do. We use eco-friendly packaging, promote recycling, and support environmental initiatives to reduce our carbon footprint. By choosing Zenbrew, you’re making a conscious choice to support a brand that values the environment.\n\nCommunity is at the core of our mission. We aim to create a welcoming space where coffee lovers can come together, share stories, and build connections. Whether you visit one of our cozy cafes or enjoy our coffee at home, you are part of the Zenbrew family.\n\nJoin us in our commitment to exceptional coffee, ethical practices, and a positive impact on the world. With Zenbrew, every cup you enjoy contributes to a better future for our planet and the people who inhabit it.",
+        description: "At Zenbrew, we promise the finest coffee with a positive impact. We source beans from sustainable farms, respecting people and the planet. Our meticulous roasting process ensures a rich, satisfying experience in every cup. We are committed to quality, sustainability, and community.\n\nOur promise extends beyond just delivering exceptional coffee. We believe in building lasting relationships with the farmers who cultivate our beans, ensuring they receive fair wages and work in safe conditions. This ethical approach helps create a sustainable livelihood for those who are at the heart of our coffee production.\n\nQuality is paramount at Zenbrew. Our expert roasters carefully monitor each batch, bringing out the unique flavors and aromas of our premium beans. From the moment the beans are harvested to the final brew, every step is handled with precision and care.\n\nSustainability is woven into the fabric of everything we do. We use eco-friendly packaging, promote recycling, and support environmental initiatives to reduce our carbon footprint. By choosing Zenbrew, you're making a conscious choice to support a brand that values the environment.\n\nCommunity is at the core of our mission. We aim to create a welcoming space where coffee lovers can come together, share stories, and build connections. Whether you visit one of our cozy cafes or enjoy our coffee at home, you are part of the Zenbrew family.\n\nJoin us in our commitment to exceptional coffee, ethical practices, and a positive impact on the world. With Zenbrew, every cup you enjoy contributes to a better future for our planet and the people who inhabit it.",
     },
     {
         imgSrc: "/assets/about/photo-3.jpg",
@@ -20,29 +20,98 @@ const data = [
 
 function Page() {
     return (
-        <div className="bg-black">
-        <div className="container mx-auto mt-20 bg-gray-400">
-            {data.map((item, index) => (
-                <React.Fragment key={index}>
-                    <article className="overflow-hidden rounded-lg shadow-sm hover:scale-105 transition-all hover:shadow-xl mb-8 mt-5">
-                    <h2 className='h2 text-black mb-4 flex justify-center cursor-default'>
-                                {item.title.split('').map((char, i) => (
-                                    <span key={i} className={i === 1 ? 'text-accent' : ''}>
-                                        {char}
-                                    </span>
-                                ))}
-                            </h2>
-                        <div className="bg-white p-4 sm:p-6 text-center mt-14">
-                        
-                            <p className="text-sm leading-relaxed text-black cursor-default">
-                                {item.description}
-                            </p>
-                        </div>
-                    </article>
-                    {index < data.length - 1 && <hr className="border-t border-white my-4" />}
-                </React.Fragment>
-            ))}
-        </div>
+        <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
+            {/* Hero Section */}
+            <div className="relative overflow-hidden bg-gradient-to-r from-amber-900/90 to-orange-900/90 py-16">
+                <div className="absolute inset-0 opacity-30">
+                    <div className="absolute inset-0 bg-amber-400/10"></div>
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent via-amber-300/5 to-orange-300/5"></div>
+                </div>
+                <div className="container mx-auto px-6 relative z-10">
+                    <h1 className="text-5xl md:text-6xl font-bold text-center text-white mb-4">
+                        About <span className="text-amber-300">Zenbrew</span>
+                    </h1>
+                    <p className="text-xl text-center text-amber-100 max-w-2xl mx-auto">
+                        Discover the story behind every perfect cup
+                    </p>
+                </div>
+            </div>
+
+            {/* Main Content */}
+            <div className="container mx-auto px-6 py-16 max-w-6xl">
+                {data.map((item, index) => (
+                    <React.Fragment key={index}>
+                        <article className="group mb-20">
+                            {/* Title Section */}
+                            <div className="text-center mb-12">
+                                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 inline-block">
+                                    {item.title.split('').map((char, i) => (
+                                        <span 
+                                            key={i} 
+                                            className={`${i === 1 ? 'text-amber-600' : ''} 
+                                                      hover:scale-110 inline-block transition-transform duration-200 cursor-default`}
+                                            style={{ animationDelay: `${i * 100}ms` }}
+                                        >
+                                            {char === ' ' ? '\u00A0' : char}
+                                        </span>
+                                    ))}
+                                </h2>
+                                <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full"></div>
+                            </div>
+
+                            {/* Content Card */}
+                            <div className="relative">
+                                {/* Background decorative element */}
+                                <div className="absolute -inset-4 bg-gradient-to-r from-amber-100/50 to-orange-100/50 rounded-3xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                                
+                                <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-amber-100/50 overflow-hidden">
+                                    {/* Image placeholder with gradient overlay */}
+                                    <div className="h-64 md:h-80 bg-gradient-to-br from-amber-200 via-orange-200 to-yellow-200 relative overflow-hidden rounded-t-2xl">
+                                        <img
+                                            src={item.imgSrc}
+                                            alt={item.title}
+                                            className="absolute inset-0 w-full h-full object-cover rounded-t-2xl"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                                        {/* Coffee bean decoration */}
+                                        <div className="absolute top-6 right-6 w-12 h-12 bg-amber-600/20 rounded-full flex items-center justify-center">
+                                            <div className="w-6 h-6 bg-amber-700/40 rounded-full"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Text Content */}
+                                    <div className="p-8 md:p-12">
+                                        <div className="prose prose-lg max-w-none">
+                                            {item.description.split('\n\n').map((paragraph, pIndex) => (
+                                                <p 
+                                                    key={pIndex} 
+                                                    className="text-gray-700 leading-relaxed mb-6 text-base md:text-lg first-letter:text-4xl first-letter:font-bold first-letter:text-amber-600 first-letter:float-left first-letter:mr-2 first-letter:mt-1"
+                                                >
+                                                    {paragraph}
+                                                </p>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        {/* Separator */}
+                        {index < data.length - 1 && (
+                            <div className="flex items-center justify-center my-16">
+                                <div className="flex items-center space-x-4">
+                                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
+                                    <div className="w-3 h-3 bg-amber-500 rounded-full animate-pulse"></div>
+                                    <div className="w-16 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
+                                </div>
+                            </div>
+                        )}
+                    </React.Fragment>
+                ))}
+            </div>
+
+            {/* Footer accent */}
+            <div className="h-32 bg-gradient-to-t from-amber-900/10 to-transparent"></div>
         </div>
     );
 }
